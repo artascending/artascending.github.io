@@ -79,7 +79,7 @@ function signUp() {
   console.debug("signUp() write to users/${auth.currentUser.uid}");
   authButton.innerText = "Sign out";
   document.getElementById("username-display").innerText =
-    "Hi " + username.value;
+    username.value;
   username.classList.add("is-valid");
   setTimeout(() => {
     signUpModalObject.hide();
