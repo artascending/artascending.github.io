@@ -86,16 +86,25 @@ function signUp() {
   signUpModalSubmit.setAttribute("disabled", ""); 
   if (!username || !email || !phone) {
     // At least one input is empty, add "is-invalid" class
-    if (!username) signUpModalInput.classList.add("is-invalid");
-    if (!email) emailInput.classList.add("is-invalid");
-    if (!phone) phoneInput.classList.add("is-invalid");
+    if (!username) {
+      signUpModalInput.classList.add("is-invalid");
+      setTimeout(() => {
+        signUpModalInput.classList.remove("is-invalid");
+      }, 2000);
+    }
+    if (!email) {
+      emailInput.classList.add("is-invalid");
+      setTimeout(() => {
+        emailInput.classList.remove("is-invalid");
+      }, 2000);
+    }
+    if (!phone) {
+      phoneInput.classList.add("is-invalid");
+      setTimeout(() => {
+        phoneInput.classList.remove("is-invalid");
+      }, 2000);
+    }
     signUpModalSubmit.removeAttribute("disabled", "");
-    setTimeout(() => {
-     signUpModalObject.hide();
-     signUpModalInput.classList.remove("is-invalid");
-      emailInput.classList.remove("is-invalid");
-      phoneInput.classList.remove("is-invalid");
-    }, 1000);
   } else {                               
     updateProfile(user, { displayName: fullinfo });
     setDoc(doc(db, "users", user.uid), { name: fullinfo, admin: "" });
