@@ -21,7 +21,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 60,
-    endTime: "2023-04-25T00:05:00+00:00",
+    endTime: "2024-04-25T00:05:00+00:00",
   },
   {
     primaryImage: "",
@@ -31,7 +31,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 20,
-    endTime: "2023-04-25T00:10:00+00:00",
+    endTime: "2024-04-25T00:10:00+00:00",
   },
   {
     primaryImage: "",
@@ -41,7 +41,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 0,
-    endTime: "2023-04-25T00:15:00+00:00",
+    endTime: "2024-04-25T00:15:00+00:00",
   },
   {
     primaryImage: "",
@@ -51,7 +51,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 4,
-    endTime: "2023-04-25T00:20:00+00:00",
+    endTime: "2024-04-25T00:20:00+00:00",
   },
   {
     primaryImage: "",
@@ -61,7 +61,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 0,
-    endTime: "2023-04-25T00:25:00+00:00",
+    endTime: "2024-04-25T00:25:00+00:00",
   },
   {
     primaryImage: "",
@@ -71,7 +71,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 99,
-    endTime: "2023-04-25T00:30:00+00:00",
+    endTime: "2024-04-25T00:30:00+00:00",
   },
   {
     primaryImage: "",
@@ -81,7 +81,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 0,
-    endTime: "2023-04-25T00:35:00+00:00",
+    endTime: "2024-04-25T00:35:00+00:00",
   },
   {
     primaryImage: "",
@@ -91,7 +91,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 12,
-    endTime: "2023-04-25T00:40:00+00:00",
+    endTime: "2024-04-25T00:40:00+00:00",
   },
   {
     primaryImage: "",
@@ -101,7 +101,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 6,
-    endTime: "2023-04-25T00:45:00+00:00",
+    endTime: "2024-04-25T00:45:00+00:00",
   },
   {
     primaryImage: "",
@@ -111,7 +111,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 3,
-    endTime: "2023-04-25T00:50:00+00:00",
+    endTime: "2024-04-25T00:50:00+00:00",
   },
   {
     primaryImage: "",
@@ -121,7 +121,7 @@ let items = [
     secondaryImage: "",
     currency: "$",
     amount: 7,
-    endTime: "2023-04-25T00:55:00+00:00",
+    endTime: "2024-04-25T00:55:00+00:00",
   },
 ];
 
