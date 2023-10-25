@@ -89,6 +89,12 @@ function signUp() {
     if (!email) emailInput.classList.add("is-invalid");
     if (!phone) phoneInput.classList.add("is-invalid");
     signUpModalSubmit.removeAttribute("disabled", "");
+    setTimeout(() => {
+     signUpModalObject.hide();
+     signUpModalInput.classList.remove("is-invalid");
+      emailInput.classList.remove("is-invalid");
+      phoneInput.classList.remove("is-invalid");
+    }, 1000);
   } else {                               
     updateProfile(user, { displayName: fullinfo });
     setDoc(doc(db, "users", user.uid), { name: fullinfo, admin: "" });
