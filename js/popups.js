@@ -17,7 +17,9 @@ const adminButton = document.getElementById("admin-button");
 const authButton = document.getElementById("auth-button");
 const signUpModal = document.getElementById("login-modal");
 const signUpModalObject = new bootstrap.Modal(signUpModal);
-const signUpModalInput = signUpModal.querySelector("input");
+const signUpModalInput = signUpModal.querySelector("#username-input");
+const emailInput = signUpModal.querySelector("#email-input");
+const numberInput = signUpModal.querySelector("#number-input");
 const signUpModalSubmit = signUpModal.querySelector(".btn-primary");
 
 // Function called from index.html which creates anonymous account for user (or signs in if it already exists)
@@ -72,50 +74,23 @@ signUpModalInput.addEventListener("keydown", (event) => {
 
 // Function that handles sign up logic
 function signUp() {
-  let username = signUpModalInput;
+  let username = signupModalInput;
+  let email = emailInput;
+  let phone = numberInput;
   let user = auth.currentUser;
-  
-  // Split the input into name, email, and phone number
-  const inputParts = username.value.split('/');
-  const name = inputParts[0];
-  const email = inputParts[1];
-  const phoneNumber = inputParts[2];
-  
-  // Check if all sections are filled
-  if (name && email && phoneNumber) {
-    // Update the user's display name with only the name part
-    updateProfile(user, { displayName: name });
-    
-    // Store the name, email, and phone number in Firebase
-    const userData = {
-      name,
-      email,
-      phoneNumber,
-      admin: ""
-    };
-    
-    setDoc(doc(db, "users", user.uid), userData)
-      .then(() => {
-        console.debug("signUp() write to users/${auth.currentUser.uid}");
-        authButton.innerText = "Sign out";
-        document.getElementById("username-display").innerText = "Hi " + name;
-        username.classList.add("is-valid");
-        setTimeout(() => {
-          signUpModalObject.hide();
-          username.classList.remove("is-valid");
-        }, 1000);
-      })
-      .catch((error) => {
-        console.error("Error writing to Firebase: ", error);
-      });
-  } else {
-    // If any section is missing, show an error message
-    username.classList.add("is-invalid");
-    setTimeout(() => {
-      username.classList.remove("is-invalid");
-    }, 1000);
-  }
+  updateProfile(user, { displayName: username.value + email.value + phone.value});
+  setDoc(doc(db, "users", user.uid), { name: username.value + email.value + phone.value, admin: "" });
+  console.debug("signUp() write to users/${auth.currentUser.uid}");
+  authButton.innerText = "Sign out";
+  document.getElementById("username-display").innerText =
+    username.value;
+  username.classList.add("is-valid");
+  setTimeout(() => {
+    signUpModalObject.hide();
+    username.classList.remove("is-valid");
+  }, 1000);
 }
+
 
 
 
