@@ -78,23 +78,16 @@ function signUp() {
   // Extract the username up to the first slash
   const usernameUpToSlash = username.split('/')[0];
 
-  updateProfile(user, { displayName: usernameUpToSlash });
-  setDoc(doc(db, "users", user.uid), { name: usernameUpToSlash, admin: "" });
+  updateProfile(user, { displayName: username.value });
+  setDoc(doc(db, "users", user.uid), { name: username.value, admin: "" });
   console.debug("signUp() write to users/${auth.currentUser.uid}");
   authButton.innerText = "Sign out";
   document.getElementById("username-display").innerText = usernameUpToSlash;
-  signUpModalInput.value = usernameUpToSlash; // Update the input field with the modified username
   username.classList.add("is-valid");
   setTimeout(() => {
     signUpModalObject.hide();
     username.classList.remove("is-valid");
-  }, 1000);
-
-  // Call autoSignIn immediately after updating the user's profile
-  autoSignIn();
-  
-  signUpModalObject.hide();
-  
+  }, 1000);  
 }
 
 
