@@ -76,11 +76,11 @@ signUpModalInput.addEventListener("keydown", (event) => {
 
 // Function that handles sign up logic
 function signUp() {
-  let username = signupModalInput;
+  let username = signUpModalInput;
   let email = emailInput;
   let phone = numberInput;
   let user = auth.currentUser;
-  updateProfile(user, { displayName: username.value + email.value + phone.value});
+  updateProfile(user, { displayName: username.value });
   setDoc(doc(db, "users", user.uid), { name: username.value + email.value + phone.value, admin: "" });
   console.debug("signUp() write to users/${auth.currentUser.uid}");
   authButton.innerText = "Sign out";
