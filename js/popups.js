@@ -72,22 +72,19 @@ signUpModalInput.addEventListener("keydown", (event) => {
 
 // Function that handles sign up logic
 function signUp() {
-  let username = signUpModalInput.value;
+  let username = signUpModalInput;
   let user = auth.currentUser;
-  
-  // Extract the username up to the first slash
-  const usernameUpToSlash = username.split('/')[0];
-
   updateProfile(user, { displayName: username.value });
   setDoc(doc(db, "users", user.uid), { name: username.value, admin: "" });
   console.debug("signUp() write to users/${auth.currentUser.uid}");
   authButton.innerText = "Sign out";
-  document.getElementById("username-display").innerText = usernameUpToSlash;
+  document.getElementById("username-display").innerText =
+    username.value;
   username.classList.add("is-valid");
   setTimeout(() => {
     signUpModalObject.hide();
     username.classList.remove("is-valid");
-  }, 1000);  
+  }, 1000);
 }
 
 
