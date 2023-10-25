@@ -4,11 +4,11 @@ export const isDemo = false;
 // Specify item details
 let items = [
   {
-    primaryImage: "https://www.flickr.com/photos/199403685@N03/53284248629/in/dateposted-public/",
-    title: "Testturtle",
+    primaryImage: "https://live.staticflickr.com/65535/53284248629_0c502853f1_n.jpg",
+    title: "The Test Turtle",
     subtitle: "Its pretty cool.",
     detail: "This art piece by Ha-Min Bae encapsulates the spirit of the turtle.",
-    secondaryImage: "https://www.flickr.com/photos/199403685@N03/53284248629/in/dateposted-public/",
+    secondaryImage: "https://live.staticflickr.com/65535/53284248629_0c502853f1_n.jpg",
     currency: "$",
     amount: 55,
     endTime: "2024-04-25T00:00:00+00:00",
