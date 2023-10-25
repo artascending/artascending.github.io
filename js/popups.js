@@ -28,7 +28,7 @@ export function autoSignIn() {
       // If user has an anonymous account and a displayName, treat them as signed in
       authButton.innerText = "Sign out";
       document.getElementById("username-display").innerText =
-        "Hi " + user.displayName;
+        user.displayName;
       // If user is admin, display the admin button
       getDoc(doc(db, "users", user.uid)).then((user) => {
         if (user.data().admin) {
