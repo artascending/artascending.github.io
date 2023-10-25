@@ -17,7 +17,7 @@ const adminButton = document.getElementById("admin-button");
 const authButton = document.getElementById("auth-button");
 const signUpModal = document.getElementById("login-modal");
 const signUpModalObject = new bootstrap.Modal(signUpModal);
-const signUpModalInput = signUpModal.querySelector("input");
+const signUpModalInput = signUpModal.querySelector("#username-input");
 const emailInput = signUpModal.querySelector("#email-input");
 const numberInput = signUpModal.querySelector("#number-input");
 const signUpModalSubmit = signUpModal.querySelector(".btn-primary");
@@ -76,12 +76,10 @@ signUpModalInput.addEventListener("keydown", (event) => {
 
 // Function that handles sign up logic
 function signUp() {
-  let username = signUpModalInput;
-  let email = emailInput;
-  let phone = numberInput;
+  let username = signUpModalInput + "," + emailInput + "," + numberInput;
   let user = auth.currentUser;
   updateProfile(user, { displayName: username.value });
-  setDoc(doc(db, "users", user.uid), { name: username.value + email.value + phone.value, admin: "" });
+  setDoc(doc(db, "users", user.uid), { name: username.value, admin: "" });
   console.debug("signUp() write to users/${auth.currentUser.uid}");
   authButton.innerText = "Sign out";
   document.getElementById("username-display").innerText =
