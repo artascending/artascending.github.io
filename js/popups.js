@@ -17,7 +17,8 @@ const adminButton = document.getElementById("admin-button");
 const authButton = document.getElementById("auth-button");
 const signUpModal = document.getElementById("login-modal");
 const signUpModalObject = new bootstrap.Modal(signUpModal);
-const signUpModalInput = signUpModal.querySelector("#username-input");
+const signUpModalInput = signUpModal.querySelector("input");
+const nameInput = signUpModal.querySelector ("#username-input");
 const emailInput = signUpModal.querySelector("#email-input");
 const numberInput = signUpModal.querySelector("#number-input");
 const signUpModalSubmit = signUpModal.querySelector(".btn-primary");
@@ -76,7 +77,7 @@ signUpModalInput.addEventListener("keydown", (event) => {
 
 // Function that handles sign up logic
 function signUp() {
-  let username = signUpModalInput;
+  let username = nameInput;
   let email = emailInput;
   let phone = numberInput;
   let user = auth.currentUser;
