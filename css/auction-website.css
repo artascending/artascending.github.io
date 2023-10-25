@@ -1,22 +1,40 @@
-html * {
-  font-family: "Roboto", sans-serif;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url(https://live.staticflickr.com/65535/53286230059_fa7b7f5085_z.jpg); /* Replace 'your-image.jpg' with your image file path */
+            background-size: cover;
+            background-attachment: fixed; /* This keeps the background fixed when scrolling */
+            background-color: #F7DBCD; /* Fallback background color */
+        }
 
-/* Bootstrap tweaks */
-.card-img-top {
-  width: 100%;
-  height: 16em;
-  object-fit: cover;
-}
+        /* Your existing CSS code */
+        html * {
+            font-family: "Roboto", sans-serif;
+        }
 
-.list-group-horizontal > .list-group-item {
-  border: none;
-}
+        /* Bootstrap tweaks */
+        .card-img-top {
+            width: 100%;
+            height: 16em;
+            object-fit: cover;
+        }
 
-.modal-body > img {
-  width: 100%;
-}
+        .list-group-horizontal > .list-group-item {
+            border: none;
+        }
 
-.card > .table {
-  margin-bottom: 0;
-}
+        .modal-body > img {
+            width: 100%;
+        }
+
+        .card > .table {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your webpage content goes here -->
+</body>
+</html>
