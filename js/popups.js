@@ -29,8 +29,9 @@ export function autoSignIn() {
       console.debug(`Signed-in: name=${user.displayName}, uid=${user.uid}`);
       // If user has an anonymous account and a displayName, treat them as signed in
       authButton.innerText = "Sign out";
-      document.getElementById("username-display").innerText = 
-        user.displayName;
+      const displayNameParts = user.displayName.split(',');
+      const displayName = displayNameParts[0].trim(); // Trim to remove leading/trailing spaces
+      document.getElementById("username-display").innerText = displayName;
       // If user is admin, display the admin button
       getDoc(doc(db, "users", user.uid)).then((user) => {
         if (user.data().admin) {
