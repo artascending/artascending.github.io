@@ -72,21 +72,28 @@ signUpModalInput.addEventListener("keydown", (event) => {
 
 // Function that handles sign up logic
 function signUp() {
-  let username = signUpModalInput;
+  let username = signUpModalInput.value;
   let user = auth.currentUser;
-  const splitName = username.split("/")[0].trim();
-  updateProfile(user, { displayName: username.value });
-  setDoc(doc(db, "users", user.uid), { name: username.value, admin: "" });
+  
+  // Extract the username up to the first slash
+  const usernameUpToSlash = username.split('/')[0];
+
+  updateProfile(user, { displayName: usernameUpToSlash });
+  setDoc(doc(db, "users", user.uid), { name: usernameUpToSlash, admin: "" });
   console.debug("signUp() write to users/${auth.currentUser.uid}");
   authButton.innerText = "Sign out";
-  document.getElementById("username-display").innerText =
-    splitName;
+  document.getElementById("username-display").innerText = usernameUpToSlash;
+  signUpModalInput.value = usernameUpToSlash; // Update the input field with the modified username
   username.classList.add("is-valid");
   setTimeout(() => {
     signUpModalObject.hide();
     username.classList.remove("is-valid");
   }, 1000);
+
+  // Call autoSignIn immediately after updating the user's profile
+  autoSignIn();
 }
+
 
 // --Bidding modal and logic --
 const bidModal = document.getElementById("bid-modal");
