@@ -76,7 +76,7 @@ signUpModalInput.addEventListener("keydown", (event) => {
 
 // Function that handles sign up logic
 function signUp() {
-  let username = nameInput;
+  let username = signUpModalInput;
   let email = emailInput;
   let phone = numberInput;
   let user = auth.currentUser;
