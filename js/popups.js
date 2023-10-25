@@ -76,26 +76,25 @@ signUpModalInput.addEventListener("keydown", (event) => {
 
 // Function that handles sign up logic
 function signUp() {
-  preventDefault();
-  let username = signUpModalInput;
-  let email = emailInput;
-  let phone = phoneInput;
+  event.preventDefault();
+  let username = signUpModalInput.value;
+  let email = emailInput.value;
+  let phone = phoneInput.value;
   let user = auth.currentUser;
   let fullinfo = `${username}, ${email}, ${phone}`;
-  updateProfile(user, { displayName: fullinfo.value });
-  setDoc(doc(db, "users", user.uid), { name: fullinfo.value, admin: "" });
-  console.debug("signUp() write to users/${auth.currentUser.uid}");
+  updateProfile(user, { displayName: fullinfo });
+  setDoc(doc(db, "users", user.uid), { name: fullinfo, admin: "" });
+  console.debug(`signUp() write to users/${auth.currentUser.uid}`);
   authButton.innerText = "Sign out";
-  document.getElementById("username-display").innerText =
-    username.value;
-  username.classList.add("is-valid");
-  email.classList.add("is-valid");
-  phone.classList.add("is-valid");
+  document.getElementById("username-display").innerText = username;
+  signUpModalInput.classList.add("is-valid");
+  emailInput.classList.add("is-valid");
+  phoneInput.classList.add("is-valid");
   setTimeout(() => {
     signUpModalObject.hide();
-    username.classList.remove("is-valid");
-    email.classList.remove("is-valid");
-    phone.classList.remove("is-valid");
+    signUpModalInput.classList.remove("is-valid");
+    emailInput.classList.remove("is-valid");
+    phoneInput.classList.remove("is-valid");
   }, 1000);
 }
 
