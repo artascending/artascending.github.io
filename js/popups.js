@@ -74,18 +74,49 @@ signUpModalInput.addEventListener("keydown", (event) => {
 function signUp() {
   let username = signUpModalInput;
   let user = auth.currentUser;
-  updateProfile(user, { displayName: username.value });
-  setDoc(doc(db, "users", user.uid), { name: username.value, admin: "" });
-  console.debug("signUp() write to users/${auth.currentUser.uid}");
-  authButton.innerText = "Sign out";
-  document.getElementById("username-display").innerText =
-    username.value;
-  username.classList.add("is-valid");
-  setTimeout(() => {
-    signUpModalObject.hide();
-    username.classList.remove("is-valid");
-  }, 1000);
+  
+  // Split the input into name, email, and phone number
+  const inputParts = username.value.split('/');
+  const name = inputParts[0];
+  const email = inputParts[1];
+  const phoneNumber = inputParts[2];
+  
+  // Check if all sections are filled
+  if (name && email && phoneNumber) {
+    // Update the user's display name with only the name part
+    updateProfile(user, { displayName: name });
+    
+    // Store the name, email, and phone number in Firebase
+    const userData = {
+      name,
+      email,
+      phoneNumber,
+      admin: ""
+    };
+    
+    setDoc(doc(db, "users", user.uid), userData)
+      .then(() => {
+        console.debug("signUp() write to users/${auth.currentUser.uid}");
+        authButton.innerText = "Sign out";
+        document.getElementById("username-display").innerText = "Hi " + name;
+        username.classList.add("is-valid");
+        setTimeout(() => {
+          signUpModalObject.hide();
+          username.classList.remove("is-valid");
+        }, 1000);
+      })
+      .catch((error) => {
+        console.error("Error writing to Firebase: ", error);
+      });
+  } else {
+    // If any section is missing, show an error message
+    username.classList.add("is-invalid");
+    setTimeout(() => {
+      username.classList.remove("is-invalid");
+    }, 1000);
+  }
 }
+
 
 
 // --Bidding modal and logic --
