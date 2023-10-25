@@ -93,41 +93,60 @@
 
     <!-- Login popup -->
     <div id="login-modal" class="modal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 id="login-modal-title" class="modal-title">
-              Sign up for auction
-            </h5>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="login-modal-title" class="modal-title">
+          Sign up for auction
+        </h5>
+      </div>
+      <div class="modal-body">
+        <p>Please provide us with your name, email, and phone number to let us know who's bidding!</p>
+        <form onsubmit="return false;">
+          <div class="form-floating mb-3">
+            <input
+              type="username"
+              class="form-control"
+              id="username-input"
+              placeholder="Name/Email/Number"
+            />
+            <label for="username-input">Format: Name/Email/Number</label>
           </div>
-          <div class="modal-body">
-            <p>Please provide us with your name, email, and phone number to let us know who's bidding!</p>
-            <form onsubmit="return false;">
-              <div class="form-floating mb-3">
-                <input
-                  type="username"
-                  class="form-control"
-                  id="username-input"
-                  placeholder="username"
-                />
-                <label for="username-input">Format: Name/Email/Number</label>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                  aria-label="Cancel"
-                >
-                  Cancel
-                </button>
-                <button type="submit" class="btn btn-primary">Sign up</button>
-              </div>
-            </form>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="email-input"
+              placeholder="Email"
+            />
+            <label for="email-input">Email</label>
           </div>
-        </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="phone-input"
+              placeholder="Phone Number"
+            />
+            <label for="phone-input">Phone Number</label>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              aria-label="Cancel"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Sign up</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
+</div>
+
     <!-- Info popup -->
     <div id="info-modal" class="modal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
