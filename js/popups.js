@@ -53,6 +53,8 @@ authButton.addEventListener("click", () => {
     document.getElementById("username-display").innerText = "";
   } else {
     signUpModalInput.value = "";
+    emailInput.value = "";
+    numberInput.value = "";
     signUpModalObject.show();
   }
 });
