@@ -77,6 +77,8 @@ signUpModalInput.addEventListener("keydown", (event) => {
 // Function that handles sign up logic
 function signUp() {
   let username = signUpModalInput;
+  let email = emailInput;
+  let phone = phoneInput;
   let user = auth.currentUser;
   updateProfile(user, { displayName: username.value });
   setDoc(doc(db, "users", user.uid), { name: username.value, admin: "" });
@@ -85,9 +87,13 @@ function signUp() {
   document.getElementById("username-display").innerText =
     username.value;
   username.classList.add("is-valid");
+  email.classList.add("is-valid");
+  phone.classList.add("is-valid");
   setTimeout(() => {
     signUpModalObject.hide();
     username.classList.remove("is-valid");
+    email.classList.remove("is-valid");
+    phone.classList.remove("is-valid");
   }, 1000);
 }
 
