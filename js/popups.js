@@ -18,8 +18,6 @@ const authButton = document.getElementById("auth-button");
 const signUpModal = document.getElementById("login-modal");
 const signUpModalObject = new bootstrap.Modal(signUpModal);
 const signUpModalInput = document.getElementById("username-input");
-const emailInput = document.getElementById("email-input");
-const numberInput = document.getElementById("phone-input");
 const signUpModalSubmit = signUpModal.querySelector(".btn-primary");
 
 // Function called from index.html which creates anonymous account for user (or signs in if it already exists)
@@ -53,8 +51,6 @@ authButton.addEventListener("click", () => {
     document.getElementById("username-display").innerText = "";
   } else {
     signUpModalInput.value = "";
-    emailInput.value = "";
-    numberInput.value = "";
     signUpModalObject.show();
   }
 });
