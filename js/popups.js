@@ -80,8 +80,9 @@ function signUp() {
   let email = emailInput;
   let phone = phoneInput;
   let user = auth.currentUser;
-  updateProfile(user, { displayName: username.value });
-  setDoc(doc(db, "users", user.uid), { name: username.value, admin: "" });
+  let fullinfo = `${username}, ${email}, ${phone}`;
+  updateProfile(user, { displayName: fullinfo.value });
+  setDoc(doc(db, "users", user.uid), { name: fullinfo.value, admin: "" });
   console.debug("signUp() write to users/${auth.currentUser.uid}");
   authButton.innerText = "Sign out";
   document.getElementById("username-display").innerText =
