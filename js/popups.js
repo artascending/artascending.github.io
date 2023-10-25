@@ -76,7 +76,7 @@ signUpModalInput.addEventListener("keydown", (event) => {
 
 // Function that handles sign up logic
 function signUp() {
-  let username = signUpModalInput + "," + emailInput + "," + numberInput;
+  let username = signUpModalInput;
   let user = auth.currentUser;
   updateProfile(user, { displayName: username.value });
   setDoc(doc(db, "users", user.uid), { name: username.value, admin: "" });
