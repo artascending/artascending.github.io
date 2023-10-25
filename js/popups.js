@@ -82,24 +82,30 @@ function signUp() {
   let phone = phoneInput.value;
   let user = auth.currentUser;
   let fullinfo = `${username}, ${email}, ${phone}`;
-  updateProfile(user, { displayName: fullinfo });
-  setDoc(doc(db, "users", user.uid), { name: fullinfo, admin: "" });
-  console.debug(`signUp() write to users/${auth.currentUser.uid}`);
-  authButton.innerText = "Sign out";
-  document.getElementById("username-display").innerText = username;
-  signUpModalInput.classList.add("is-valid");
-  emailInput.classList.add("is-valid");
-  phoneInput.classList.add("is-valid");
-  setTimeout(() => {
-    signUpModalObject.hide();
-    signUpModalInput.classList.remove("is-valid");
-    emailInput.classList.remove("is-valid");
-    phoneInput.classList.remove("is-valid");
-  }, 1000);
+  signUpModalSubmit.setAttribute("disabled", ""); 
+  if (!username || !email || !phone) {
+    // At least one input is empty, add "is-invalid" class
+    if (!username) signUpModalInput.classList.add("is-invalid");
+    if (!email) emailInput.classList.add("is-invalid");
+    if (!phone) phoneInput.classList.add("is-invalid");
+    signUpModalSubmit.removeAttribute("disabled", "");
+  } else {                               
+    updateProfile(user, { displayName: fullinfo });
+    setDoc(doc(db, "users", user.uid), { name: fullinfo, admin: "" });
+    console.debug(`signUp() write to users/${auth.currentUser.uid}`);
+    authButton.innerText = "Sign out";
+    document.getElementById("username-display").innerText = username;
+    signUpModalInput.classList.add("is-valid");
+    emailInput.classList.add("is-valid");
+    phoneInput.classList.add("is-valid");
+    setTimeout(() => {
+      signUpModalObject.hide();
+      signUpModalInput.classList.remove("is-valid");
+      emailInput.classList.remove("is-valid");
+      phoneInput.classList.remove("is-valid");
+    }, 1000);
+  }
 }
-
-
-
 
 // --Bidding modal and logic --
 const bidModal = document.getElementById("bid-modal");
