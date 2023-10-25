@@ -17,9 +17,9 @@ const adminButton = document.getElementById("admin-button");
 const authButton = document.getElementById("auth-button");
 const signUpModal = document.getElementById("login-modal");
 const signUpModalObject = new bootstrap.Modal(signUpModal);
-const signUpModalInput = signUpModal.querySelector("#username-input");
-const emailInput = signUpModal.querySelector("#email-input");
-const numberInput = signUpModal.querySelector("#number-input");
+const signUpModalInput = document.getElementById("username-input");
+const emailInput = document.getElementById("email-input");
+const numberInput = document.getElementById("phone-input");
 const signUpModalSubmit = signUpModal.querySelector(".btn-primary");
 
 // Function called from index.html which creates anonymous account for user (or signs in if it already exists)
