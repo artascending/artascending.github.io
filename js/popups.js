@@ -27,8 +27,8 @@ export function autoSignIn() {
       console.debug(`Signed-in: name=${user.displayName}, uid=${user.uid}`);
       // If user has an anonymous account and a displayName, treat them as signed in
       authButton.innerText = "Sign out";
-      const partialName = user.displayName.split('/')[0];
-      document.getElementById("username-display").innerText = partialName;
+      document.getElementById("username-display").innerText = 
+        user.displayName;
       // If user is admin, display the admin button
       getDoc(doc(db, "users", user.uid)).then((user) => {
         if (user.data().admin) {
@@ -74,12 +74,13 @@ signUpModalInput.addEventListener("keydown", (event) => {
 function signUp() {
   let username = signUpModalInput;
   let user = auth.currentUser;
+  const splitName = username.split("/")[0].trim();
   updateProfile(user, { displayName: username.value });
   setDoc(doc(db, "users", user.uid), { name: username.value, admin: "" });
   console.debug("signUp() write to users/${auth.currentUser.uid}");
   authButton.innerText = "Sign out";
   document.getElementById("username-display").innerText =
-    username.value;
+    splitName;
   username.classList.add("is-valid");
   setTimeout(() => {
     signUpModalObject.hide();
