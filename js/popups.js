@@ -92,6 +92,9 @@ function signUp() {
 
   // Call autoSignIn immediately after updating the user's profile
   autoSignIn();
+  
+  signUpModalObject.hide();
+  
 }
 
 
