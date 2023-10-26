@@ -20,3 +20,19 @@ html * {
 .card > .table {
   margin-bottom: 0;
 }
+
+.custom-button {
+  border-radius: 10px; /* Beveled edges */
+  background-color: #64862d; /* Different color (replace with your preferred color) */
+  color: #fff; /* Text color */
+  font-weight: bold; /* Optional: Make the text bold */
+  /* Add any other styles you want for the button */
+}
+
+.custom-buttontwo {
+  border-radius: 10px; /* Beveled edges */
+  background-color: #5a626a; /* Different color (replace with your preferred color) */
+  color: #fff; /* Text color */
+  font-weight: bold; /* Optional: Make the text bold */
+  /* Add any other styles you want for the button */
+}
