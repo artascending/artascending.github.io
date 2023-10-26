@@ -6,7 +6,8 @@
             background-image: url(background.jpg); /* Replace 'your-image.jpg' with your image file path */
             background-size: cover;
             background-attachment: fixed; /* This keeps the background fixed when scrolling */
-            background-color: #F7DBCD; /* Fallback background color */
+            background-position: center;
+            background-repeat: norepeat; 
         }
 
         /* Your existing CSS code */
