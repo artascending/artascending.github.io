@@ -112,7 +112,6 @@ function generateItemCard(auction) {
   infoButton.dataset.bsToggle = "modal";
   infoButton.dataset.bsTarget = "#info-modal";
   infoButton.innerText = "Info";
-  infoButton.style.borderRadius: "10px";
   buttonGroup.appendChild(infoButton);
 
   let bidButton = document.createElement("button");
@@ -121,8 +120,6 @@ function generateItemCard(auction) {
   bidButton.innerText = "Place bid";
   bidButton.dataset.bsToggle = "modal";
   bidButton.dataset.bsTarget = "#bid-modal";
-  bidButton.style.borderRadius: "10px";
-  bidButton.style.backgroundColor = "YellowGreen";
   buttonGroup.appendChild(bidButton);
 
   return col;
