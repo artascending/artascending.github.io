@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
   <head>
-    <style>
+     <style>
       body {
         background-image: url(https://live.staticflickr.com/65535/53286230059_fa7b7f5085_z.jpg); 
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
+        background-position: center;
       }
+
+       .container {
+        background-color: rgba(255, 255, 255, 0.7); /* Adjust the alpha (fourth value) to control transparency */
+        padding: 20px; /* Add some padding to the container */
+        position: relative; /* Ensure content is displayed on top of the background */
+        z-index: 1; /* Set a high z-index to ensure content appears above the background */
+      }
+    </style>
     <meta charset="utf-8" />
     <meta name="robots" content="NOINDEX, NOFOLLOW" />
     <!--add no follow tag to keep out of front facing index and search engines-->
