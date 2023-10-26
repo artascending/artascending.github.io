@@ -200,6 +200,11 @@ if (bidModal) {
       feedback.innerText = "Please specify an amount!";
       amountElement.classList.add("is-invalid");
       bidModalSubmit.removeAttribute("disabled", "");
+       } else if (amount > 1000) {
+      // amount was empty
+      feedback.innerText = "Please no amount over 1000!";
+      amountElement.classList.add("is-invalid");
+      bidModalSubmit.removeAttribute("disabled", "");
     } else if (!/^-?\d*\.?\d{0,2}$/.test(amount)) {
       // field is does not contain money
       feedback.innerText = "Please specify a valid amount!";
