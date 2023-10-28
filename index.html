@@ -13,7 +13,7 @@
        .container {
         background-color: rgba(255, 255, 255, 0); /* Adjust the alpha (fourth value) to control transparency */
         position: relative; /* Ensure content is displayed on top of the background */
-        z-index: 1; /* Set a high z-index to ensure content appears above the background */
+        z-index: 100; /* Set a high z-index to ensure content appears above the background */
       }
     </style>
     <meta charset="utf-8" />
@@ -152,8 +152,8 @@
               data-bs-dismiss="modal"
               aria-label="Cancel"
              >
-              Cancel
-            </button>
+                Cancel
+              </button>
               <button type="submit" class="btn btn-primary">Sign up</button>
             </div>
           </form>
