@@ -77,7 +77,6 @@ signUpModalInput.addEventListener("keydown", (event) => {
 
 // Function that handles sign up logic
 function signUp() {
-  event.preventDefault();
   let username = signUpModalInput.value;
   let email = emailInput.value;
   let phone = phoneInput.value;
@@ -110,6 +109,7 @@ function signUp() {
     setDoc(doc(db, "users", user.uid), { name: fullinfo, admin: "" });
     console.debug("signUp() write to users/${auth.currentUser.uid}");
     authButton.innerText = "Sign out";
+    signUpModalSubmit.removeAttribute("disabled", "");
     document.getElementById("username-display").innerText = username;
     signUpModalInput.classList.add("is-valid");
     emailInput.classList.add("is-valid");
