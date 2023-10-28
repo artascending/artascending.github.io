@@ -116,7 +116,7 @@ function generateItemCard(auction) {
 
   let bidButton = document.createElement("button");
   bidButton.type = "button";
-  bidButton.classList.add("btn", "btn-primary");
+  bidButton.classList.add("btn", "btn-primary\");
   bidButton.innerText = "Place bid";
   bidButton.dataset.bsToggle = "modal";
   bidButton.dataset.bsTarget = "#bid-modal";
