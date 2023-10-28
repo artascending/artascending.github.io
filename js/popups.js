@@ -11,7 +11,7 @@ import {
   onAuthStateChanged,
   updateProfile,
 } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
- <link rel="stylesheet" href="./css/auction-website.css" />
+
 
 // -- Sign up modal and logic --
 const adminButton = document.getElementById("admin-button");
@@ -130,7 +130,7 @@ if (bidModal) {
   const bidModalObject = new bootstrap.Modal(bidModal);
   const bidModalTitle = bidModal.querySelector("strong");
   const bidModalInput = bidModal.querySelector("input");
-  const bidModalSubmit = bidModal.querySelector(".custom-button");
+  const bidModalSubmit = bidModal.querySelector(".btn-primary");
 
   // Populate bidModal with the correct information before it is visible
   bidModal.addEventListener("show.bs.modal", (event) => {
