@@ -108,7 +108,7 @@ function signUp() {
   } else {                               
     updateProfile(user, { displayName: fullinfo });
     setDoc(doc(db, "users", user.uid), { name: fullinfo, admin: "" });
-    console.debug(`signUp() write to users/${auth.currentUser.uid}`);
+    console.debug("signUp() write to users/${auth.currentUser.uid}");
     authButton.innerText = "Sign out";
     document.getElementById("username-display").innerText = username;
     signUpModalInput.classList.add("is-valid");
