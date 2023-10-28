@@ -4,6 +4,7 @@ import {
   doc,
   onSnapshot,
 } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore.js";
+<link rel="stylesheet" href="./css/auction-website.css" />
 
 let grid = document.getElementById("auction-grid");
 
@@ -116,7 +117,7 @@ function generateItemCard(auction) {
 
   let bidButton = document.createElement("button");
   bidButton.type = "button";
-  bidButton.classList.add("btn", "btn-primary");
+  bidButton.classList.add("btn", "custom-button");
   bidButton.innerText = "Place bid";
   bidButton.dataset.bsToggle = "modal";
   bidButton.dataset.bsTarget = "#bid-modal";
