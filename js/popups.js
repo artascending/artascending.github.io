@@ -129,7 +129,7 @@ if (bidModal) {
   const bidModalObject = new bootstrap.Modal(bidModal);
   const bidModalTitle = bidModal.querySelector("strong");
   const bidModalInput = bidModal.querySelector("input");
-  const bidModalSubmit = bidModal.querySelector(".btn-primary");
+  const bidModalSubmit = bidModal.querySelector(".custom-button");
 
   // Populate bidModal with the correct information before it is visible
   bidModal.addEventListener("show.bs.modal", (event) => {
