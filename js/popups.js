@@ -11,6 +11,7 @@ import {
   onAuthStateChanged,
   updateProfile,
 } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
+ <link rel="stylesheet" href="./css/auction-website.css" />
 
 // -- Sign up modal and logic --
 const adminButton = document.getElementById("admin-button");
